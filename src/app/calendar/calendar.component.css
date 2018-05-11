@@ -1,0 +1,66 @@
+.container {
+  display: grid;
+  grid-template-rows: 40px auto;
+  width: 600px;
+  margin-left: 300px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  font-family: sans-serif WorkSans;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-column-gap: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 50px 30px auto;
+  grid-template-areas:
+    "grid-name"
+    "weekdays"
+    "days";
+  grid-row-gap: 20px;
+}
+
+.weekdays {
+  grid-area: weekdays;
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  grid-column-gap: 10px;
+  border-bottom: solid 2px #e9e9f0;
+}
+
+.days {
+  grid-area: days;
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  grid-template-rows: repeat(5, 30px);
+  grid-gap: 10px;
+}
+
+.grid-name {
+  grid-area: grid-name;
+}
+
+.btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.btn-group>p:first-child {
+  justify-self: start;
+}
+
+.btn-group>p:last-child {
+  justify-self: end;
+}
+
+p > button {
+  background-color: transparent;
+  border-color: transparent;
+  outline: initial;
+}

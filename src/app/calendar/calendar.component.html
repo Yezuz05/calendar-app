@@ -1,3 +1,44 @@
-<p>
-  calendar works!
-</p>
+<div class="container">
+  <div class="btn-group">
+    <p>
+      <button (click)="backward()"><i class="fa fa-angle-left fa-4x"></i></button>
+    </p>
+    <p>
+      <button class="" (click)="forward()"><i class="fa fa-angle-right fa-4x"></i></button>
+    </p>
+  </div>
+  <div class="calendar">
+    <div class="grid">
+      <h3 class="grid-name">{{ cal1.month_name }} {{ year }}</h3>
+      <div class="weekdays">
+        <div class="row">Su</div>
+        <div class="row">M</div>
+        <div class="row">T</div>
+        <div class="row">W</div>
+        <div class="row">Th</div>
+        <div class="row">F</div>
+        <div class="row">S</div>
+      </div>
+      <div class="days">
+        <div *ngFor="let emp of cal1.month_empty_days" class="day-cell"></div>
+        <div *ngFor="let day of cal1.month_days" class="day-cell" [style.background-color]="hasEvent({cal: 1, day: day}) ? 'red': 'transparent'">{{ day }}</div>
+      </div>
+    </div>
+    <div class="grid">
+      <h3 class="grid-name">{{cal2.month_name}} {{ year }}</h3>
+      <div class="weekdays">
+        <div class="row">Su</div>
+        <div class="row">M</div>
+        <div class="row">T</div>
+        <div class="row">W</div>
+        <div class="row">Th</div>
+        <div class="row">F</div>
+        <div class="row">S</div>
+      </div>
+      <div class="days">
+        <div *ngFor="let emp of cal2.month_empty_days" class="day-cell"></div>
+        <div *ngFor="let day of cal2.month_days" class="day-cell" [style.background-color]="hasEvent({cal: 2, day: day}) ? 'red': 'transparent'">{{ day }}</div>
+      </div>
+    </div>
+  </div>
+</div>
