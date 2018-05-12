@@ -9,10 +9,10 @@ import * as moment from 'moment';
 })
 export class CalendarComponent implements OnInit {
   @Input() dates;
-  year = 2018;
-  year2 = 2018;
-  month = 0;
-  month2 = 1;
+  year = moment().year();
+  year2 = moment().year();
+  month = moment().month();
+  month2 = moment().month() + 1;
   cal1 = {
     month_days: null,
     month_name: null,
